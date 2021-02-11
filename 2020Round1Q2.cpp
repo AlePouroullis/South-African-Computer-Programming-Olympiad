@@ -21,8 +21,3 @@ int main(){
 
     cout << total_grains_on_black_tiles;
 }
-
-
-
-
-
