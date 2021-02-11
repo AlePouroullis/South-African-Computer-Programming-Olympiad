@@ -23,8 +23,3 @@ int main(){
     for(int i = 0; i < output_string.length(); i++)
         cout << output_string[i] << ((i != output_string.length() - 1) ? '+' : '\n');
 }
-
-
-
-
-
