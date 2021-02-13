@@ -5,6 +5,8 @@
 #include <cmath>
 #include <queue>
 
+using namespace std;
+
 bool prime(const int &num){
   if(num < 2) return false;
   if(num == 2 || num == 3) return true;
