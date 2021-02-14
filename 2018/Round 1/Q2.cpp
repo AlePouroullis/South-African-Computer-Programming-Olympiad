@@ -7,9 +7,9 @@
 using namespace std;
 
 bool isvowel(const char &letter){
-    return (letter == 'a' && letter == 'e' 
-        && letter == 'i'  && letter == 'o' 
-        && letter == 'u');
+    return (letter == 'a' || letter == 'e' 
+        || letter == 'i'  || letter == 'o' 
+        || letter == 'u');
 }
 
 int main(){
