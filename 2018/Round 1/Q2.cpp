@@ -22,6 +22,5 @@ int main(){
            }
         else
             cout << input_string[i];
-
     }
 }
