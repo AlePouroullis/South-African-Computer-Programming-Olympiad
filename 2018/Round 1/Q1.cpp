@@ -12,6 +12,6 @@ int main()
     int total_cost = 0;
     total_cost += (daytime > 100 ? (daytime - 100)*80 : 0);
     total_cost += evening * 70;
-    total_cost += 50 * weekend;
+    total_cost += weekend * 50;
     cout << total_cost << "c" << endl;
 }
