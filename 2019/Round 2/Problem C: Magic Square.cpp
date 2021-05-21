@@ -5,14 +5,6 @@
 
 using namespace std;
 
-#define fast ios::sync_with_stdio(false);cin.tie(0);
-typedef long long ll;
-typedef unsigned long long ull;
-typedef long double ld;
-#define pii pair<int, int>
-#define vi vector<int>
-#define pb push_back
-
 int main(){
     int n;
     cin >> n;
