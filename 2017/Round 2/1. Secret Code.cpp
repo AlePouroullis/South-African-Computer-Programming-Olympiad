@@ -23,7 +23,7 @@ int main(){
 
     int rows = message.length()/5;
 
-    // Storing the each character in the message in a 2-dimensions fashion.
+    // Storing the each character in the message in a 2-dimensional fashion.
     char code[rows][5];
     int pos = 0;
     for(int row = 0; row < rows; row++){
