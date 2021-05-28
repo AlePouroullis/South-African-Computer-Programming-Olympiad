@@ -37,6 +37,7 @@ int main(){
         set<int> remainders;
         string output_string = "";
         cout << numerator/denominator << ".(";
+        // Long division:
         while(!remainders.count(numerator%denominator)){
             int remainder = numerator % denominator;
             remainders.insert(numerator%denominator);
