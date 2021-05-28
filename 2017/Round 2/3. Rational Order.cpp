@@ -1,10 +1,7 @@
 // Solution by Alexandros Pouroullis
-/*
-A bit sketchy, because it stores the rational numbers as floats in a set,
-and comparison of decimal numbers sometimes doesn't work as intended.
-*/
 #include <iostream>
-#include <set>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -19,13 +16,25 @@ typedef long double ld;
 int main(){
     int n;
     cin >> n;
-    set<float> ans;
+    vector<double> fracs;
     for(int i = 0; i <= n; i++){
         for(int j = 1; j <= n; j++){
             if(i > j)
                 continue;
-            ans.insert((float)i/j);
+            fracs.push_back((double)i/j);
         }
+    }
+
+    // Sorts in ascending order to make comparison of numbers in the next loop feasible.
+    sort(fracs.begin(), fracs.end());
+    vector<double> ans;
+    for(int i = 0; i < fracs.size(); i++){
+        // Floating point numbers can sometimes differ in the 7th decimal place and onwards, even when the numbers 
+        // are expected to be equal. For this reason, we want to ensure that we only add unique rational numbers to
+        // our vector of answers. To achieve this, you check that the difference between the number most recently added to 
+        // the ans vector and the next number in the vector of fractions is larger than 10^-6 (6th decimal place).
+        if(ans.size() == 0 || abs(ans.back() - fracs[i]) > 1e-6)
+            ans.push_back(fracs[i]);
     }
     cout << ans.size();
 }
