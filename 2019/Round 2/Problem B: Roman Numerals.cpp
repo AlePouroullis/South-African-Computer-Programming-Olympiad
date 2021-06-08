@@ -1,7 +1,12 @@
 // Solution by Alexandros Pouroullis
 #include <bits/stdc++.h>
 
+using namespace std;
+
 map<char, int> rom_numeral;
+string numerals[] = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
+int values[] = {1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
+string roms;
 
 int RomToInt(string rom){
     int sum = 0;
@@ -22,60 +27,13 @@ int RomToInt(string rom){
 string IntToRom(int sum){
     string roman_numeral = "";
     int cnt = 0;
+    int i = 12;
     while(sum){
-        if(sum >= 1000){
-            roman_numeral += "M";
-            sum -= 1000;
-        }
-        else if(sum >= 900){
-            roman_numeral += "CM";
-            sum -= 900;
-        }
-        else if(sum >= 500){
-            roman_numeral += "D";
-            sum -= 500;
-        }
-        else if(sum >= 400){
-            roman_numeral += "CD";
-            sum -= 400;
-        }
-        else if(sum >= 100){
-            roman_numeral += "C";
-            sum -= 100;
-        }
-        else if(sum >= 90){
-            roman_numeral += "XC";
-            sum -= 90;
-        }
-        else if(sum >= 50){
-            roman_numeral += "L";
-            sum -= 50;
-        }
-        else if(sum >= 40){
-            roman_numeral += "XL";
-            sum -= 40;
-        }
-        else if(sum >= 10){
-            roman_numeral += "X";
-            sum -= 10;
-        }
-        else if(sum >= 9){
-            roman_numeral += "IX";
-            sum -= 9;
-        }
-        else if(sum >= 5){
-            roman_numeral += "V";
-            sum -= 5;
-        }
-        else if(sum >= 4){
-            roman_numeral += "IV";
-            sum -= 4;
-        }
-        else{
-            roman_numeral += "I";
-            sum -= 1;
-        }
-
+        int quotient = sum / values[i];
+        while(quotient--)
+            roman_numeral += numerals[i];
+        sum %= values[i];
+        i--;
     }
     return roman_numeral;
 }
