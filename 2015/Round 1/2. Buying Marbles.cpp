@@ -8,17 +8,14 @@ int main(){
     cin >> n;
 
     int a[n];
-    int required = 0;
+    int max_num = 0;
+    int sum = 0;
     for(int i = 0; i < n; i++){
         cin >> a[i];
-        if(a[i] > required)
-            required = a[i];
+        if(a[i] > max_num)
+            max_num = a[i];
+        sum += a[i];
     }
 
-    int ans = 0;
-    for(int i = 0; i < n; i++){
-        ans += required - a[i];
-    }
-
-    cout << ans << endl;
+    cout << max_num * n - sum << endl;
 }
